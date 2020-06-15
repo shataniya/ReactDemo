@@ -32,6 +32,7 @@ module.exports = {
           },
           {
             test: /\.css$/,
+            exclude:[/node_modules/],
             use: [
               'style-loader',
               // 'css-loader'
@@ -56,6 +57,14 @@ module.exports = {
                   ]
                 }
               }
+            ]
+          },
+          {
+            test: /\.css$/,
+            exclude:[/src/],
+            use: [
+              'style-loader',
+              'css-loader'
             ]
           },
           {
