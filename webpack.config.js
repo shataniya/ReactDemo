@@ -34,7 +34,28 @@ module.exports = {
             test: /\.css$/,
             use: [
               'style-loader',
-              'css-loader'
+              // 'css-loader'
+              {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    // localIdentName: '[local]_[hash:base64:8]'
+                    // localIdentName: '[name]__[local]--[hash:base64:5]'
+                    // minimize: true
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  // ident: 'postcss',
+                  plugins: (loader) => [
+                    // require('postcss-import')({ root: loader.resourcePath }),
+                    require('postcss-cssnext')(),
+                    // require('autoprefixer')(),
+                    // require('cssnano')()
+                  ]
+                }
+              }
             ]
           },
           {
