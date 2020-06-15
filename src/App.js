@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import style from './App.css'
 
 class App extends React.Component {
     constructor(props){
@@ -8,7 +8,7 @@ class App extends React.Component {
     }
     render(){
         return (
-            <div className='app'>
+            <div className={style.app}>
                 <h1>Hello, World!</h1>
             </div>
         )
